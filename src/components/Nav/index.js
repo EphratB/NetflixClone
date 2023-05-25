@@ -1,9 +1,13 @@
 import React from "react";
 import "./styles.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
 
 export default function Nav() {
+  const navigate = useNavigate();
+  const handleSignOut = () => {
+    navigate(`/signin`);
+  };
   return (
     <div className="navbar">
       <h1 className="nav_logo">Addis Cinema</h1>
@@ -15,6 +19,7 @@ export default function Nav() {
       </nav>
       <div className="nav_avatar">
         <FiLogOut
+          onClick={handleSignOut}
           style={{
             color: "#fff",
             width: "20px",

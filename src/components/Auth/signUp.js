@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // import { useNavigate } from "react-router-dom";
 import {
@@ -11,7 +11,7 @@ import {
 import "./styles.scss";
 
 function SignUp() {
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -23,6 +23,7 @@ function SignUp() {
         // Signed in
         const user = userCredential.user;
         alert(`${user.email}`, "signed in");
+        navigate(`/signin`);
 
         // ...
       })
